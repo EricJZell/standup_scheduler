@@ -6,12 +6,12 @@ feature 'Add an employee', %{
   So that they can be assigned to standups
 
   Acceptance Criteria:
-  []  I must provide an employee name
-  []  On success, I am brought to the employees page with a success message
-  []  If no name is provided, the form is re-loaded with an error message
+  [x]  I must provide an employee name
+  [x]  On success, I am brought to the employees page with a success message
+  [x]  If no name is provided, the form is re-loaded with an error message
 } do
 
-  scenario 'provide valid employee name' do
+  scenario 'user provides valid employee name' do
     visit employees_path
     click_link 'Add a New Employee'
 

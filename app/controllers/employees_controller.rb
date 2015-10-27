@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.all
+    @employees = Employee.order(:name)
   end
 
   def new
@@ -19,7 +19,9 @@ class EmployeesController < ApplicationController
   end
 
   def update
-
+    employee = Employee.find(params[:id])
+    employee.toggle!(:active)
+    redirect_to employees_path
   end
 
   protected

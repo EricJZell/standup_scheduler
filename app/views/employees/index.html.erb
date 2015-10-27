@@ -4,9 +4,9 @@
     <li>
       <%= employee.name %>:
       <% if employee.active %>
-        (active)
+        (Active) <%= link_to("Make Inactive", employee_path(employee), method: :patch) %>
       <% else %>
-        (inactive)
+        (Inactive) <%= link_to("Make Active", employee_path(employee), method: :patch) %>
       <% end %>
     </li>
   <% end %>

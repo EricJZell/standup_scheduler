@@ -1,5 +1,12 @@
 <h1>Scheduled Standups:</h1>
-<%= link_to("Add a standup", new_standup_path, class:"button") %>
+<% if Employee.two_active? %>
+  <%= link_to("Add a standup", new_standup_path, class:"button") %>
+<% else %>
+  <p class="alert-box warning">
+    Notice: Not enough active employees to create standup.
+    <%= link_to("Go to employees page", employees_path) %>
+  </p>
+<% end %>
 <ul>
   <% @standups.each do |standup| %>
     <li>
