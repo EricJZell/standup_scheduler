@@ -18,6 +18,10 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
   protected
 
   def employee_params

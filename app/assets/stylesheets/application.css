@@ -15,3 +15,7 @@
  *= require foundation_and_overrides
 
  */
+
+.main-container {
+  padding: 20px;
+}
