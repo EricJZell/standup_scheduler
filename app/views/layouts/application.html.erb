@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Standup Scheduler" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -15,11 +15,12 @@
   <body>
     <%= render 'layouts/top_bar' %>
     <%- flash.each do |key, value| -%>
-      <div class="alert-box flash flash-<%= key %>">
+      <div class="alert-box <%= key %>">
         <%= value %>
       </div>
     <%- end -%>
-    <%= yield %>
-
+    <div class="main-container row">
+      <%= yield %>
+    </div>
   </body>
 </html>

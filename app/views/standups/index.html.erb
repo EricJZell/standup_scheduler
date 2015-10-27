@@ -1,6 +1,10 @@
 <h1>Scheduled Standups:</h1>
+<%= link_to("Add a standup", new_standup_path, class:"button") %>
 <ul>
   <% @standups.each do |standup| %>
-    <li><%= standup.date.strftime("%B %d, %Y") %>: <%= standup.employees.join(', ') %></li>
+    <li>
+      <%= standup.date.strftime("%B %d, %Y") %>:
+      <%= "#{standup.employees[0].name}, #{standup.employees[1].name}"%>
+    </li>
   <% end %>
 </ul>

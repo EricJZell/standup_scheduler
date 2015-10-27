@@ -1,0 +1,6 @@
+<h1>Enter the date for the new standup</h1>
+<%= form_for @standup do |f| %>
+  <%= f.label :date %>
+  <%= f.date_select(:date) %>
+  <%= f.submit class:"button"%>
+<% end %>

@@ -1,7 +1,14 @@
 <h1>Employees:</h1>
 <ul>
   <% @employees.each do |employee| %>
-    <li><%= employee.name %> </li>
+    <li>
+      <%= employee.name %>:
+      <% if employee.active %>
+        (active)
+      <% else %>
+        (inactive)
+      <% end %>
+    </li>
   <% end %>
 </ul>
 <%= link_to("Add a New Employee", new_employee_path) %>
