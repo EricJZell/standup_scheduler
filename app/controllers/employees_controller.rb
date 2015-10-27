@@ -8,12 +8,12 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    employee = Employee.new(employee_params)
-    if employee.save
+    @employee = Employee.new(employee_params)
+    if @employee.save
       flash[:success] = 'Employee Successfully Added'
       redirect_to employees_path
     else
-      flash[:warning] = employee.errors.full_messages.join(', ')
+      flash[:warning] = @employee.errors.full_messages.join(', ')
       render :new
     end
   end
