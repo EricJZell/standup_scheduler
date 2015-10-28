@@ -9,6 +9,8 @@ feature 'Create a standup', %{
   [x]  Only active employees should be selected for the standup
   [x]  If there are not enough active employees, I receive an error message and
        am brough to the employees path
+  [x]  If there are not enough active employees, I am notified at the standups
+       index page
 } do
 
   scenario 'Only active employees are selected for standups' do
@@ -28,6 +30,12 @@ feature 'Create a standup', %{
     click_button 'Create Standup'
     expect(page).to have_content("Not enough active employees to create standup")
     expect(page).to have_content("Employees:")
+  end
+
+  scenario 'I am notified at the standups index if there are not enough active employees' do
+    visit standups_path
+    expect(page).to have_content("Notice: Not enough active employees to create standup.")
+    expect(page).to have_content("Go to employees page")
   end
 
 end
