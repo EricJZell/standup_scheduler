@@ -5,4 +5,8 @@ FactoryGirl.define do
     sequence(:name) { |n| "John Smith #{n}" }
     active true
   end
+
+  factory :standup do
+    date Date.today
+  end
 end

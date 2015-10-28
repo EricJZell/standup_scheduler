@@ -24,10 +24,10 @@ feature 'Create a standup', %{
   end
 
   scenario 'Flash error and redirect to employees if not enough active employees' do
-    visit standups_path
-    click_link 'Add a standup'
+    visit new_standup_path
     click_button 'Create Standup'
     expect(page).to have_content("Not enough active employees to create standup")
+    expect(page).to have_content("Employees:")
   end
 
 end
